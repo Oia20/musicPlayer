@@ -295,5 +295,6 @@ const volumeDownButton = document.getElementById("volumeDown");
 
 volumeUpButton.addEventListener("click", () => changeVolume('up'));
 volumeDownButton.addEventListener("click", () => changeVolume('down'));
+
 renderSongs(userData?.songs);
 setPlayButtonAccessibleText();
