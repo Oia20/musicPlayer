@@ -278,5 +278,22 @@ userData?.songs.sort((a,b) => {
   return 0;
 });
 
+// const audioVol = document.getElementById("myAudio");
+
+function changeVolume(direction) {
+  var currentVolume = audio.volume;
+
+  if (direction === 'up' && currentVolume < 1.0) {
+    audio.volume += 0.1;
+  } else if (direction === 'down' && currentVolume > 0.0) {
+    audio.volume -= 0.1;
+  }
+}
+
+const volumeUpButton = document.getElementById("volumeUp");
+const volumeDownButton = document.getElementById("volumeDown");
+
+volumeUpButton.addEventListener("click", () => changeVolume('up'));
+volumeDownButton.addEventListener("click", () => changeVolume('down'));
 renderSongs(userData?.songs);
 setPlayButtonAccessibleText();
